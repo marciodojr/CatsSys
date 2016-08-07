@@ -1,0 +1,53 @@
+<section class="content">
+    <p><?php echo $this->message; ?></p>
+
+    <?php if ($this->patrimonies !== null): ?>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 col-xs-12">
+
+                <table id="patrimony-table" class="table table-condensed table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th class="text-center">@</th>
+                            <th class="text-center">Cadastrado</th>
+                            <th class="text-center">Editado</th>
+                            <th class="text-center">Tipo</th>
+                            <th class="text-center">Situação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($this->patrimonies as $p): ?>
+                        <tr class="cats-row" data-id="<?php echo $p->getPatrimonyId(); ?>">
+                                <td class="text-center"><?php echo $p->getPatrimonyId(); ?></td>
+                                <td class="text-center"><?php echo $p->getPatrimonyAlternativeId(); ?></td>
+                                <td class="text-center"><?php echo $p->getPatrimonyRegistrationDate(); ?></td>
+                                <td class="text-center"><?php echo $p->getPatrimonyLastEditionDate(); ?></td>
+                                <td class="text-center"><?php echo $p->getPatrimonyType(); ?></td>
+                                <td class="text-center"><?php echo $p->getPatrimonyStatus(); ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    <?php endif; ?>
+
+</section>
+
+
+<script>
+
+    appConfig = (function () {
+        var scriptSrc = 'app/pages/patrimony/patrimony/Index';
+
+        return {
+            getScriptSrc: function () {
+                return scriptSrc;
+            }
+        };
+
+    })();
+
+</script>

@@ -39,5 +39,6 @@ return array(
         'AdministrativeStructure' => 'application/layout',
         'Version' => 'application/layout',
         'FinancialManagement' => 'application/layout',
+        'Patrimony' => 'application/layout',
     )
 );

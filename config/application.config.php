@@ -38,6 +38,8 @@ $modules = array(
     'Version',
     // FinancialManagement
     'FinancialManagement',
+    // Módulo de patrimônio
+    'Patrimony',
 );
 
 if ($env === 'development') {

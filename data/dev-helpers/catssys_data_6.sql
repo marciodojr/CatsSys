@@ -20,3 +20,6 @@ INSERT INTO `registration_status` VALUES
 (2,2,1,'2016-06-12 14:01:25',0),
 (3,1,13,'2016-06-12 14:03:01',1),
 (4,2,12,'2016-06-12 14:03:11',1);
+
+insert into `patrimony` values(null, 'CATS001AB3', '2016-08-06 10:23:56', NULL, 'LIVRO', 'ATIVO');
+insert into `patrimony` values(null, 'CATS001BX5', '2016-08-07 10:23:56', NULL, 'ELETRÔNICO', 'DOADO');
