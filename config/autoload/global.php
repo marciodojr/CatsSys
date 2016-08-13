@@ -40,5 +40,6 @@ return array(
         'Version' => 'application/layout',
         'FinancialManagement' => 'application/layout',
         'Patrimony' => 'application/layout',
+        'Library' => 'application/layout',
     )
 );

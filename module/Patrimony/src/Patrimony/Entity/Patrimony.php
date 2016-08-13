@@ -24,8 +24,11 @@ use Doctrine\ORM\Mapping as ORM;
  * Faz o mapeamento objeto-relacional da tabela patrimony.
  *
  * @author Márcio Dias <marciojr91@gmail.com>
+ * 
  * @ORM\Table(name="patrimony")
  * @ORM\Entity
+ * @ORM\InheritanceType("JOINED")
+ * @ORM\DiscriminatorColumn(name="patrimony_discr", type="string")
  */
 class Patrimony
 {

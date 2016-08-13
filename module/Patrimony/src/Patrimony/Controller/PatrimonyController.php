@@ -23,7 +23,6 @@ use Exception;
 use Patrimony\Entity\Patrimony;
 use Patrimony\Form\PatrimonyForm;
 use Zend\View\Model\ViewModel;
-use function Error;
 
 /**
  * Permite manipular patrimônios.
@@ -96,7 +95,7 @@ class PatrimonyController extends AbstractEntityActionController
                 'form' => $form,
                 'message' => null,
             ]);
-        } catch (Error $ex) {
+        } catch (Exception $ex) {
             return new ViewModel([
                 'form' => null,
                 'message' => $ex->getMessage(),

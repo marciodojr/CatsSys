@@ -40,6 +40,8 @@ $modules = array(
     'FinancialManagement',
     // Módulo de patrimônio
     'Patrimony',
+    // Módulo de biblioteca
+    'Library',
 );
 
 if ($env === 'development') {
