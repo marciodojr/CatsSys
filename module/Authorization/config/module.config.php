@@ -99,7 +99,6 @@ return array(
         'driver' => array(
             'authorization_driver' => array(
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
-                'cache' => 'array',
                 'paths' => array(
                     __DIR__ . '/../src/Authorization/Entity',
                 ),

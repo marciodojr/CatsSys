@@ -12,3 +12,8 @@ vendor
 composer.phar
 error.log
 access.log
+node_modules
+vendor
+package-lock.json
+data/DoctrineModule
+data/DoctrineORMModule

@@ -1,237 +1,264 @@
 html, body {
-    background-color: #F5F5F5;
-    font-family: 'Roboto', 'Helvetica', sans-serif;
-    color: #616161;
-    font-size: 1em;
-    height: 100%;
-    border: none;
+  background-color: #F5F5F5;
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  color: #616161;
+  font-size: 1em;
+  height: 100%;
+  border: none;
 }
 
 .wrapper {
-    display:none;
-    height: 100%;
+  display: none;
+  height: 100%;
 }
 
 h1 {
-    margin: 30px 0;
-    letter-spacing: 0.8px;
+  margin: 30px 0;
+  letter-spacing: 0.8px;
 }
+
 p {
-    font-size: 16px;
+  font-size: 16px;
 }
+
 q {
-    font-size: 14px;
+  font-size: 14px;
 }
+
 hr {
-    margin: 10px;
+  margin: 10px;
 }
 
 .catssys-bg-teal {
-    background-color: #008080;
-    color: white;
+  background-color: #008080;
+  color: white;
 }
 
 .catssys-bg-beauty-blue {
-    background-color: #1565C0;
-    color: white;
+  background-color: #1565C0;
+  color: white;
 }
 
 .catssys-bg-teal a, .catssys-bg-beauty-blue a {
-    color: white;
-    text-decoration: underline;
+  color: white;
+  text-decoration: underline;
 }
 
 .catssys-header {
-    background: url('../img/header-bg.jpg') center fixed;
-    background-position: center;
-    background-size: cover;
-    height: 560px;
-    max-height: 50%;
+  background: url("../img/header-bg.jpg") center fixed;
+  background-position: center;
+  background-size: cover;
+  height: 560px;
+  max-height: 50%;
 }
 
 .navbar-default {
-    background-color: #088080;
-    border-color: #016060;
+  background-color: #088080;
+  border-color: #016060;
 }
+
 .navbar-default .navbar-brand {
-    color: #ecdbff;
+  color: #ecdbff;
 }
+
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-    color: #ffffff;
+  color: #ffffff;
 }
+
 .navbar-default .navbar-text {
-    color: #ecdbff;
+  color: #ecdbff;
 }
+
 .navbar-default .navbar-nav > li > a {
-    color: #ecdbff;
+  color: #ecdbff;
 }
+
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-    color: #ffffff;
+  color: #ffffff;
 }
+
 .navbar-default .navbar-nav > li > .dropdown-menu {
-    background-color: #9b59b6;
+  background-color: #9b59b6;
 }
+
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a {
-    color: #ecf0f1;
+  color: #ecf0f1;
 }
+
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
-    color: #ecdbff;
-    background-color: #8e44ad;
+  color: #ecdbff;
+  background-color: #8e44ad;
 }
+
 .navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
-    background-color: #8e44ad;
+  background-color: #8e44ad;
 }
+
 .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
 .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
 .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #ecdbff;
-    background-color: #8e44ad;
+  color: #ecdbff;
+  background-color: #8e44ad;
 }
+
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-    color: #ffffff;
-    background-color: #016060;
+  color: #ffffff;
+  background-color: #016060;
 }
+
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-    color: #ffffff;
-    background-color: #016060;
+  color: #ffffff;
+  background-color: #016060;
 }
+
 .navbar-default .navbar-toggle {
-    border-color: #016060;
+  border-color: #016060;
 }
+
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-    background-color: #016060;
+  background-color: #016060;
 }
+
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: #ecdbff;
+  background-color: #ecdbff;
 }
+
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-    border-color: #ecdbff;
+  border-color: #ecdbff;
 }
+
 .navbar-default .navbar-link {
-    color: #ecdbff;
+  color: #ecdbff;
 }
+
 .navbar-default .navbar-link:hover {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 @media (max-width: 767px) {
-    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-        color: #ecdbff;
-    }
-    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
-    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-        color: #ffffff;
-    }
-    .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
-    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
-    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-        color: #ffffff;
-        background-color: #016060;
-    }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ecdbff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #016060;
+  }
 }
 
 footer {
-    padding: 50px 0 30px 0;
-    color: #eeeeee; 
-    background-color: #222222; 
+  padding: 50px 0 30px 0;
+  color: #eeeeee;
+  background-color: #222222;
 }
 
 footer p {
-    font-size: 13px;
+  font-size: 13px;
 }
 
 footer hr {
-    border-top: 1px solid #616161;
+  border-top: 1px solid #616161;
 }
 
 .catssys-section {
-    padding-top: 25px;
-    padding-bottom: 100px;
+  padding-top: 25px;
+  padding-bottom: 100px;
 }
 
 .catssys-partners {
-    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('../img/partners.jpg') no-repeat center fixed;
-    padding-bottom: 200px;
+  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("../img/partners.jpg") no-repeat center fixed;
+  padding-bottom: 200px;
 }
 
 .catssys-partners .carousel-indicators {
-    bottom:-50px;
+  bottom: -50px;
 }
+
 .catssys-partners .carousel-inner {
-    padding-top: 40px;
-    margin-bottom: 50px;
+  padding-top: 40px;
+  margin-bottom: 50px;
 }
 
 .catssys-test {
-    text-align: center;
-}
-
-
-.catssys-test i.fa {
-    border-radius: 50%;
-    transition: all 0.5s;
+  text-align: center;
 }
 
 .catssys-test i.fa {
-    border: 4px solid white;
-    font-size: 25px;
-    margin-bottom: 5px;
-    width: 60px;
-    height: 60px;
-    padding: 15px 10px;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+
+.catssys-test i.fa {
+  border: 4px solid white;
+  font-size: 25px;
+  margin-bottom: 5px;
+  width: 60px;
+  height: 60px;
+  padding: 15px 10px;
 }
 
 .catssys-test:hover i.fa {
-    background: white;
-    color: #008080;
+  background: white;
+  color: #008080;
 }
 
 .catssys-test a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
-
 
 .catssys-admin-structure {
-    text-align: center;
-    box-sizing: border-box;
-    padding: 5px 5px;
-    border-top: 4px solid transparent;
-    cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 5px 5px;
+  border-top: 4px solid transparent;
+  cursor: pointer;
 }
+
 .catssys-admin-structure > div {
-    color: inherit;
-    min-height: 290px;
+  color: inherit;
+  min-height: 290px;
 }
+
 .catssys-admin-structure i {
-    border: 4px solid #008080;
-    padding: 27px 25px;
-    font-size: 40px;
-    margin-bottom: 5px;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    transition: all 0.5s; 
+  border: 4px solid #008080;
+  padding: 27px 25px;
+  font-size: 40px;
+  margin-bottom: 5px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transition: all 0.5s;
 }
+
 .catssys-admin-structure:hover i {
-    background: #008080;
-    color: white; 
+  background: #008080;
+  color: white;
 }
 
 .catssys-admin-structure-disabled {
-    color: gray; }
+  color: gray;
+}
+
 .catssys-admin-structure-disabled i {
-    border: 4px solid #0F9A9A; }
+  border: 4px solid #0F9A9A;
+}
+
 .catssys-admin-structure-disabled:hover > i {
-    background: #0F9A9A;
-    color: white; 
+  background: #0F9A9A;
+  color: white;
 }

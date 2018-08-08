@@ -9,7 +9,7 @@ return array(
             'Site\Controller\SiteManagement' => Factory\Controller\SiteManagementControllerFactory::class,
         ),
     ),
-    
+
     'router' => array(
         'routes' => array(
             'home' => array(
@@ -47,7 +47,7 @@ return array(
                             ),
                         ),
                     ),
-                    
+
                 ),
             ),
         ),
@@ -74,7 +74,6 @@ return array(
         'driver' => array(
             'site_driver' => array(
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
-                'cache' => 'array',
                 'paths' => array(
                     __DIR__ . '/../src/Site/Entity',
                 ),

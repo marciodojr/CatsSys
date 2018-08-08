@@ -230,7 +230,6 @@ return [
             ],
             'administrative-structure_driver' => [
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
-                'cache' => 'array',
                 'paths' => [
                     __DIR__ . '/../src/AdministrativeStructure/Entity',
                 ],

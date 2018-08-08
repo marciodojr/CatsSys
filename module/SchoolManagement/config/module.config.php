@@ -163,7 +163,6 @@ return array(
         'driver' => array(
             'school-management_driver' => array(
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
-                'cache' => 'array',
                 'paths' => array(
                     __DIR__ . '/../src/SchoolManagement/Entity',
                 ),

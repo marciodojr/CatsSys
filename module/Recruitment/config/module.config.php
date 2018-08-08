@@ -173,7 +173,6 @@ return array(
         'driver' => array(
             'recruitment_driver' => array(
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
-                'cache' => 'array',
                 'paths' => array(
                     __DIR__ . '/../src/Recruitment/Entity',
                 ),
@@ -536,7 +535,7 @@ return array(
                                 'resource' => 'Recruitment\Controller\Interview',
                                 'privilege' => 'volunteer-form',
                                 'icon' => 'fa fa-file-text-o',
-                            ],                            
+                            ],
                             [
                                 'label' => 'Interviewer Evaluation Form',
                                 'route' => 'recruitment/interview',

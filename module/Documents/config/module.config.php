@@ -82,7 +82,6 @@ return array(
         'driver' => array(
             'documents_driver' => array(
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
-                'cache' => 'array',
                 'paths' => array(
                     __DIR__ . '/../src/Documents/Entity',
                 ),
@@ -109,7 +108,7 @@ return array(
                         'resource' => 'Documents\Controller\StudentBgConfig',
                         'privilege' => 'index',
                         'icon' => 'fa fa-files-o',
-                        'toolbar' => array(                                                      
+                        'toolbar' => array(
                             array(
                                 'url' => '/documents/student-bg-config/edit/$id',
                                 'id' => 'student-bg-config-edit',
@@ -126,7 +125,7 @@ return array(
                                 'class' => 'fa fa-trash-o bg-red',
                                 'fntype' => 'selectedAjaxClick',
                                 'hideOnSuccess' => true,
-                            ),  
+                            ),
                         ),
                     ),
                     array(
