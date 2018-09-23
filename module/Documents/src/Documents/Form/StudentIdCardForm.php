@@ -29,12 +29,12 @@ use Zend\InputFilter\InputFilterProviderInterface;
  */
 class StudentIdCardForm extends StudentsBoardForm implements InputFilterProviderInterface
 {
-        
+
     public function __construct($bgConfigs)
     {
         parent::__construct('student-id-card-form');
         $nextyear = date("Y") + 1;
-        
+
         $this
             ->add(array(
                 'name' => 'config_id',
@@ -49,17 +49,17 @@ class StudentIdCardForm extends StudentsBoardForm implements InputFilterProvider
                 'attributes' => array(
                     'type' => 'text',
                     'class' => 'datepicker text-center',
-                    'value' => '01/03/' . $nextyear, 
+                    'value' => '01/03/' . $nextyear,
                 ),
                 'options' => array(
                     'label' => 'Data de validade',
                     'add-on-prepend' => '<i class="glyphicon glyphicon-calendar"></i>',
                 ),
-                    
-        ));
-    }  
 
-    private function getConfigsIds($bgConfigs) 
+        ));
+    }
+
+    private function getConfigsIds($bgConfigs)
     {
         $configsIds = [];
         foreach ($bgConfigs as $bgConfig) {
@@ -98,5 +98,5 @@ class StudentIdCardForm extends StudentsBoardForm implements InputFilterProvider
             ),
         );
     }
-    
+
 }

@@ -2,7 +2,7 @@ version: '3.1'
 services:
     mysql:
         image: mysql:5.7.22
-        container_name: catssys-mysql
+        container_name: catssyssql
         environment:
             - MYSQL_DATABASE=catssys
             - MYSQL_USER=catssysdev
@@ -17,23 +17,23 @@ services:
 
     node:
         image: node:10.6.0-alpine
-        container_name: catssys-node
+        container_name: catssysjs
         environment:
-            - SERVERNAME=webserver
+            - SERVERNAME=php
         volumes:
             - .:/srv/vhosts/phpApp
         working_dir: /srv/vhosts/phpApp
-        command: /bin/sh -c "npm install grunt-cli && npm install && npm run dev"
+        command: /bin/sh -c "npm install && npm run dev"
         ports:
             - 3000:3000
             - 3001:3001
         depends_on:
-            - webserver
+            - php
 
-    php-fpm:
-        # image: marciodojr/phpstart:2.1.0
-        image: phpstart
-        container_name: catssys
+    php:
+        # image: marciodojr/phpstart-apache-docker-image:dev # subir essa imagem para o dockerhub algum dia possivelmente com outro nome
+        image: phpstart-apache:latest
+        container_name: catssysphp
         environment:
             - APP_ENV=development
             - DB_HOST=mysql
@@ -44,19 +44,10 @@ services:
         working_dir: /srv/vhosts/phpApp
         volumes:
             - .:/srv/vhosts/phpApp
-            - ./.docker/php/php-ini-overrides.ini:/usr/local/etc/php/7.2/fpm/conf.d/99-overrides.ini
-        command: /bin/sh -c "composer update && php-fpm"
-        depends_on:
-            - mysql
-
-    webserver:
-        image: nginx:1.14.0-alpine
-        container_name: catssys-webserver
-        working_dir: /srv/vhosts/phpApp
-        volumes:
-            - .:/srv/vhosts/phpApp
-            - ./.docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+            - ./.docker/php/php-ini-overrides.ini:/etc/php/7.2/apache2/conf.d/99-overrides.ini
+            - ./.docker/apache/vhost.conf:/etc/apache2/sites-available/000-default.conf
+            - ./logs/apache:/var/log/apache2
         ports:
             - 2999:80
         depends_on:
-            - php-fpm
+            - mysql

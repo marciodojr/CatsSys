@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2016 Márcio Dias <marciojr91@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -15,26 +15,27 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-define(['jquery', 'datatable'], function () {
+module.exports = (function() {
+  // your module code goes here
+  // var config = null;
 
-    var ResourceModule = (function () {
+  var userxrolesTable = $("#userxrolesTable");
+  var roleTable = $("#roleTable");
 
-        initDataTable = function () {
-            var dt = $('#resource-table').DataTable({
-                sDom: '<"top"flp>rt<"bottom"i><"clear">',
-                iDisplayLength: 20
-            });
-            $('#resource-table').show();
-        };
+  initDataTable = function(table) {
+    var dt = table.DataTable({
+      dom: "lftip",
+      paging: false
+    });
+  };
 
-        return {
-            init: function () {
-                initDataTable();
-            }
-        };
-
-    }());
-
-    return ResourceModule;
-
-});
+  return {
+    init: function() {
+      if (userxrolesTable.length > 0) {
+        initDataTable(userxrolesTable);
+      } else if (roleTable.length > 0) {
+        initDataTable(roleTable);
+      }
+    }
+  };
+})();

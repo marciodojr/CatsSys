@@ -17,3 +17,4 @@ vendor
 package-lock.json
 data/DoctrineModule
 data/DoctrineORMModule
+public/js/*.min.js

@@ -27,15 +27,4 @@
     </div>
 </section>
 
-<script>
-    appConfig = (function () {
-        var scriptSrc = 'app/pages/authorization/resource/Resource';
-
-        return {
-            getScriptSrc: function () {
-                return scriptSrc;
-            }
-        };
-
-    })();
-</script>
+<?php $this->inlineScript()->appendFile('/js/authorization-resource-resource.min.js'); ?>

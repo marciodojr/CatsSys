@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2016 Márcio Dias <marciojr91@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -15,33 +15,19 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-define(['jquery', 'datatable'], function(){
-    
-     var userModule = (function () {
-        // your module code goes here
-        // var config = null;
+module.exports = (function () {
 
-        /**
-         * 
-         * private functions
-         */
+    initDataTable = function () {
+        var userTable = $('#userTable').DataTable({
+            dom: 'lftip',
+            paging: false
+        });
+    };
 
-        initDataTable = function () {
+    return {
+        init: function () {
+            initDataTable();
+        }
+    };
 
-            var userTable = $('#userTable').DataTable({
-                dom: 'lftip',
-                paging: false
-            });
-        };
-
-        return {
-            init: function () {
-                initDataTable();
-            }
-        };
-
-    }());
-
-    return userModule;
-    
-});
+})();

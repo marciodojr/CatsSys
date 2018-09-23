@@ -52,16 +52,4 @@
     </div>
 </section>
 
-
-<script>
-    appConfig = (function () {
-        var scriptSrc = 'app/pages/authorization/role/role';
-
-        return {
-            getScriptSrc: function () {
-                return scriptSrc;
-            }
-        };
-
-    })();
-</script>
+<?php $this->inlineScript()->appendFile('/js/authorization-role-role.min.js'); ?>

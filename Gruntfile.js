@@ -1,59 +1,59 @@
 module.exports = function(grunt) {
     grunt.initConfig({
-        // browserify: {
-        //     dist: {
-        //         files: [
-        //             {
-        //                 expand: true, // Enable dynamic expansion.
-        //                 cwd: "assets/js/", // Source Path
-        //                 src: ["*.js"], // Actual pattern(s) to match.
-        //                 dest: "public/pjs", // Destination folder
-        //                 ext: ".js" // Dest filepaths will have this extension.
-        //             }
-        //         ],
-        //         options: {
-        //             transform: [["babelify", { presets: ["env"] }]],
-        //             browserifyOptions: {
-        //                 debug: false
-        //             }
-        //         }
-        //     },
-        //     dev: {
-        //         files: [
-        //             {
-        //                 expand: true, // Enable dynamic expansion.
-        //                 cwd: "assets/js/", // Source Path
-        //                 src: ["*.js"], // Actual pattern(s) to match.
-        //                 dest: "public/js", // Destination folder
-        //                 ext: ".min.js" // Dest filepaths will have this extension.
-        //             }
-        //         ],
-        //         options: {
-        //             transform: [["babelify", { presets: ["env"] }]],
-        //             browserifyOptions: {
-        //                 debug: true
-        //             }
-        //         }
-        //     }
-        // },
-        // uglify: {
-        //     options: {
-        //         banner:
-        //             '/*! Grunt Uglify <%= grunt.template.today("yyyy-mm-dd") %> */ ',
-        //         sourceMap: false
-        //     },
-        //     build: {
-        //         files: [
-        //             {
-        //                 expand: true,
-        //                 src: ["*.js"],
-        //                 cwd: "public/pjs",
-        //                 dest: "public/js",
-        //                 ext: ".min.js"
-        //             }
-        //         ]
-        //     }
-        // },
+        browserify: {
+            dist: {
+                files: [
+                    {
+                        expand: true, // Enable dynamic expansion.
+                        cwd: "assets/js/", // Source Path
+                        src: ["*.js"], // Actual pattern(s) to match.
+                        dest: "public/pjs", // Destination folder
+                        ext: ".js" // Dest filepaths will have this extension.
+                    }
+                ],
+                options: {
+                    transform: [["babelify", { presets: ["env"] }]],
+                    browserifyOptions: {
+                        debug: false
+                    }
+                }
+            },
+            dev: {
+                files: [
+                    {
+                        expand: true, // Enable dynamic expansion.
+                        cwd: "assets/js/", // Source Path
+                        src: ["*.js"], // Actual pattern(s) to match.
+                        dest: "public/js", // Destination folder
+                        ext: ".min.js" // Dest filepaths will have this extension.
+                    }
+                ],
+                options: {
+                    transform: [["babelify", { presets: ["env"] }]],
+                    browserifyOptions: {
+                        debug: true
+                    }
+                }
+            }
+        },
+        uglify: {
+            options: {
+                banner:
+                    '/*! Grunt Uglify <%= grunt.template.today("yyyy-mm-dd") %> */ ',
+                sourceMap: false
+            },
+            build: {
+                files: [
+                    {
+                        expand: true,
+                        src: ["*.js"],
+                        cwd: "public/pjs",
+                        dest: "public/js",
+                        ext: ".min.js"
+                    }
+                ]
+            }
+        },
         sass: {
             dist: {
                 options: {
@@ -109,31 +109,27 @@ module.exports = function(grunt) {
         },
         // configure the "grunt watch" task
         watch: {
-            // sass: {
-            //     files: "assets/sass/*",
-            //     tasks: ["newer:sass:dev"]
-            // },
-            // browserify: {
-            //     files: "assets/js/*",
-            //     tasks: ["newer:browserify:dev"]
-            // },
-            // copy: {
-            //     files: "assets/img/**",
-            //     tasks: ["newer:copy:images", "newer:copy:fonts"]
-            // }
+            sass: {
+                files: "assets/sass/*",
+                tasks: ["newer:sass:dev"]
+            },
+            browserify: {
+                files: "assets/js/*",
+                tasks: ["newer:browserify:dev"]
+            },
+            copy: {
+                files: "assets/img/**",
+                tasks: ["newer:copy:images", "newer:copy:fonts"]
+            }
         },
         browserSync: {
             docker: {
                 bsFiles: {
                     src: [
-                        // "public/css/*",
-                        // "public/fonts/*",
-                        // "public/img/**",
-                        // "public/js/**",
-                        // php
                         "config/**/*.php",
-                        "module/**/*.php",
-                        "public/index.php"
+                        "module/**/*.{php,phtml}",
+                        "public/index.php",
+                        "public/{js,css,img,fonts}/*"
                     ]
                 },
                 options: {
@@ -155,7 +151,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-newer");
 
     grunt.registerTask("dev-docker", [
-        // "browserify:dev",
+        "browserify:dev",
         "copy",
         "sass:dev",
         "browserSync:docker",

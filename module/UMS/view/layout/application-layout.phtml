@@ -164,7 +164,7 @@
                     ?>
                 </section>
                 <?php echo $this->content; ?>
-            </div>            
+            </div>
             <!-- /.content-wrapper -->
 
             <footer class="main-footer" style="display:none;">
@@ -196,7 +196,11 @@
             immediately after the control sidebar -->
             <div class="control-sidebar-bg"></div>
         </div>
-        <script data-main="/js/config" src="/vendor/requirejs/require.js" ></script>
+        <?php
+            echo $this
+                ->inlineScript()
+                ->prependFile('/js/dashboard.min.js');
+        ?>
     </body>
 </div>
 </html>

@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <meta property="og:image" content="<?php echo $this->serverUrl('/img/logo_fb.png'); ?>">
         <?php echo $this->headTitle('CATS'); ?>
-            
+
         <?php
         echo $this->headMeta()
             ->appendName('viewport', 'width=device-width, initial-scale=1.0')
@@ -104,11 +104,6 @@
                 </div>
             </footer>
         </div>
-
-        <script data-main="/js/site-config" src="/vendor/requirejs/require.js"></script>
-
-        <script>
-            require(['site-config']);
-        </script>
+        <script src="/js/website.min.js"></script>
     </body>
 </html>

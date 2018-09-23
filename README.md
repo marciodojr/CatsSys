@@ -87,24 +87,37 @@ docker-compose up
 
 ### Criar e importar tabelas do banco de dados
 
+**Importante**: Caso já tenha rodado uma vez os comandos abaixo e queira refazer o banco é aconselhavel remover os arquivos do mysql e recriar o container (não se esqueça de dar Ctrl+c no comando docker-compose up antes de fazer o processo abaixo):
+
+```
+sudo rm .docker/mysql/mysql-data/ -rf
+docker rm -f catssyssql
+docker-compose up
+```
+
 Em uma nova aba do terminal:
 
 ```sh
-docker container exec catssys php public/index.php orm:validate-schema
-docker container exec catssys php public/index.php orm:schema-tool:create
-docker container exec catssys php public/index.php orm:generate-proxies
-docker container exec -it catssys-mysql sh
+docker container exec catssysphp php public/index.php orm:validate-schema
+docker container exec catssysphp php public/index.php orm:schema-tool:create
+docker container exec catssysphp php public/index.php orm:generate-proxies
+docker container exec -it catssyssql sh
 cat data/dev-helpers/catssys_data_*.sql | mysql -u catssysdev -p catssys
-# Enter password: root
+# Enter password: catssysdev
+exit
 ```
 
+### Instalar as dependências de frontend
+
+Em uma nova aba do terminal:
+
 ```
-docker container exec catssys-node npm install
+docker container exec catssysjs npm install
 ```
 
 ## Quarta Parte
 
-Abra o navegador e digite http://cats-lab.lan/. Será exibida uma página que representa o site. Clique em login e insira as credenciais:
+Abra o navegador e digite http://localhost:3000/. Será exibida uma página que representa o site. Clique em login e insira as credenciais:
 
 ```
     username: fcadmin
@@ -140,3 +153,9 @@ Abra o navegador e digite http://cats-lab.lan/. Será exibida uma página que re
     - Navigation
 
 - Converter todos os javascripts para versão node e remover o bower
+
+Modulos:
+- Authentication: ok
+- Authorization: ok
+
+**Observação: Recriar o banco.**
